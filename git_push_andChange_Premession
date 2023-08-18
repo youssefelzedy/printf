@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Enter your commit"
+read commmit
+
 git add .
-git commit -m "0x0F-function_pointers"
+git commit -m "${commmit}"
 git push origin main
