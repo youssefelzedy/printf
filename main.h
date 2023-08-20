@@ -10,7 +10,7 @@
 /*Main Fnction*/
 int _printf(const char *format, ...);
 int _putchar(char c);
-int check(char ch,va_list arg);
+int check(char ch, va_list arg);
 int print_char(va_list arg);
 int print_str(va_list arg);
 int print_per(va_list arg);
