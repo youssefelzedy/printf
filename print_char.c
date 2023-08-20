@@ -55,22 +55,3 @@ int print_per(__attribute__((unused)) va_list arg)
 	_putchar(ch);
 	return (1);
 }
-
-/**
- *get_size - get size of numbers' digits
- *@n: number
- *@b: base
- *Return: size
- */
-int get_size(unsigned int n, int b)
-{
-	int size = 0;
-
-	while (n)
-	{
-		size++;
-		n /= b;
-	}
-
-	return (size);
-}

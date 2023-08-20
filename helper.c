@@ -20,3 +20,23 @@ int _strlen(char *s)
 	return (i);
 
 }
+
+/**
+ *get_size - get size of numbers' digits
+ *@n: number
+ *@b: base
+ *Return: size
+ */
+
+int get_size(unsigned int n, int b)
+{
+	int size = 0;
+
+	while (n)
+	{
+		size++;
+		n /= b;
+	}
+
+	return (size);
+}

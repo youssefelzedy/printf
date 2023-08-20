@@ -23,6 +23,12 @@ int check(char ch, va_list arg)
 		num = print_unsigned_integer(arg);
 	else if (ch == 'b')
 		num = print_binary(arg);
+	else if (ch == 'o')
+		num = print_octal(arg);
+	else if (ch == 'x')
+		num = print_hex(arg);
+	else if (ch == 'p')
+		num = print_pointer(arg);
 
 	return (num);
 }

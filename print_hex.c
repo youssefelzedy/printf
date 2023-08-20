@@ -2,38 +2,33 @@
 
 /**
  * print_hex - prints an hexgecimal number.
- * @num: the argument of the print_hex function.
+ * @arg: the argument of the print_hex function.
  * Return: counter.
  */
-int print_hex(unsigned long int num)
+
+int print_hex(va_list arg)
 {
 	long int i;
-	long int *arr;
+	long int *hex;
 	long int cntr = 0;
+	unsigned long int num = va_arg(arg, unsigned long int);
 	unsigned long int temp = num;
 
-	while (num / 16 != 0)
-	{
-		num /= 16;
-		cntr++;
-	}
-
-	cntr++;
-	arr = malloc(cntr * sizeof(long int));
+	cntr = get_size(num, 16);
+	hex = malloc(cntr * sizeof(long int));
 
 	for (i = 0; i < cntr; i++)
 	{
-		arr[i] = temp % 16;
+		hex[i] = temp % 16;
 		temp /= 16;
 	}
-
 	for (i = cntr - 1; i >= 0; i--)
 	{
-		if (arr[i] > 9)
-			arr[i] = arr[i] + 39;
-		_putchar(arr[i] + '0');
+		if (hex[i] > 9)
+			hex[i] = hex[i] + 39;
+		_putchar(hex[i] + '0');
 	}
 
-	free(arr);
+	free(hex);
 	return (cntr);
 }

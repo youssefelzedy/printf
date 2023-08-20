@@ -9,7 +9,7 @@
 int print_binary(va_list arg)
 {
 	unsigned int num = va_arg(arg, unsigned int);
-	int i, size;
+	int i, cntr;
 	char *binary;
 
 	if (num == 0)
@@ -18,23 +18,23 @@ int print_binary(va_list arg)
 		return (1);
 	}
 
-	size = get_size(num, 2);
-	binary = malloc(sizeof(char) * size + 1);
+	cntr = get_size(num, 2);
+	binary = malloc(sizeof(char) * (cntr + 1));
 
 	if (binary == NULL)
 		return (-1);
 
-	for (i = size - 1; i >= 0; i--)
+	for (i = cntr - 1; i >= 0; i--)
 	{
 		binary[i] = (num & 1) + '0';
-		num >>= 1;
+		num /= 2;
 	}
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < cntr; i++)
 	{
 		_putchar(binary[i]);
 	}
 
 	free(binary);
-	return (size);
+	return (cntr);
 }

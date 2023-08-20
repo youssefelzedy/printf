@@ -9,28 +9,22 @@
 
 int print_octal(va_list arg)
 {
-	int count = 0, i;
-	int *arr;
-	unsigned int n = va_arg(arg, unsigned int);
-	unsigned int tmp = n;
+	int cntr = 0, i;
+	int *oct;
+	unsigned int num = va_arg(arg, unsigned int);
+	unsigned int tmp = num;
 
-	while (n / 8 != 0)
+	cntr = get_size(num, 8);
+	oct = malloc(cntr * sizeof(int));
+	for (i = 0; i < cntr; i++)
 	{
-		n /= 8;
-		count++;
-	}
-	count++;
-	printf("ffffffff\n\n\n");
-	arr = malloc(count * sizeof(int));
-	for (i = 0; i < count; i++)
-	{
-		arr[i] = tmp % 8;
+		oct[i] = tmp % 8;
 		tmp /= 8;
 	}
-	for (i = count - 1; i >= 0; i--)
+	for (i = cntr - 1; i >= 0; i--)
 	{
-		_putchar(arr[i] + '0');
+		_putchar(oct[i] + '0');
 	}
-	free(arr);
-	return (count);
+	free(oct);
+	return (cntr);
 }
