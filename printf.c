@@ -20,7 +20,12 @@ int _printf(const char *format, ...)
 	num = 0;
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] != '%')
+		{
+			_putchar(format[i]);
+			num++;
+		}
+		else
 		{
 			value = 0;
 			i++;
@@ -29,11 +34,6 @@ int _printf(const char *format, ...)
 			if (value < 0)
 				return (-1);
 			num += value;
-		}
-		else
-		{
-			_putchar(format[i]);
-			num++;
 		}
 	}
 
