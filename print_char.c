@@ -23,7 +23,7 @@ int print_str(va_list arg)
 	char *str;
 	int i = 0, length;
 
-	str = va_arg(s, char *);
+	str = va_arg(arg, char *);
 	if (str == NULL)
 	{
 		str = "(null)";
