@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- *unknown - prints unknown specifiers like %r
- *@ch: char
+ * _unknown - prints unknown specifiers like %r
+ * @ch: char
  *
- *Return: number of characters printed
+ * Return: number of characters printed
  */
 
-int unknown(char ch)
+int p_unknown(char ch)
 {
 	char pre = '%';
 
