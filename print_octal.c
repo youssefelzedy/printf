@@ -20,7 +20,7 @@ int print_octal(va_list arg)
 		count++;
 	}
 	count++;
-    printf("ffffffff\n\n\n");
+	printf("ffffffff\n\n\n");
 	arr = malloc(count * sizeof(int));
 	for (i = 0; i < count; i++)
 	{
