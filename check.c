@@ -29,6 +29,8 @@ int check(char ch, va_list arg)
 		num = print_hex(arg);
 	else if (ch == 'p')
 		num = print_pointer(arg);
+	else
+		num = unknown(ch);
 
 	return (num);
 }
