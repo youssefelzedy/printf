@@ -9,33 +9,34 @@
 
 int _printf(const char *format, ...)
 {
-    va_list arg;
-    int i, value, num;
+	va_list arg;
+	int i, value, num;
 
-    if (format == NULL)
-        return (-1);
+	if (format == NULL)
+		return (-1);
 
-    va_start(arg, format);
+	va_start(arg, format);
 
-    num = 0;
-    for (i = 0; format[i] != '\0'; i++)
-    {
-        if (format[i] == '%')
-        {
-            value = 0;
-            i++;
-            value = check(format[i], arg);
+	num = 0;
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
+		{
+			value = 0;
+			i++;
+			value = check(format[i], arg);
 
-            if (value < 0)
-                return (-1);
-            num += value;
-        }
-        else
-        {
-            _putchar(format[i]);
-            num++;
-        }
-    }
-    va_end(arg);
-    return (num);
+			if (value < 0)
+				return (-1);
+			num += value;
+		}
+		else
+		{
+			_putchar(format[i]);
+			num++;
+		}
+	}
+
+	va_end(arg);
+	return (num);
 }
