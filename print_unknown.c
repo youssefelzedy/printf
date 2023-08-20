@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _unknown - prints unknown specifiers like %r
+ * p_unknown - prints unknown specifiers like %r
  * @ch: char
  *
  * Return: number of characters printed
