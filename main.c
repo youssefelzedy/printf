@@ -18,6 +18,11 @@ int main(void)
 	_printf("Hi my name is %d\n", len);
 	_printf("Hi my name is %u\n", 2808348671);
 	_printf("Hi my name is %b\n", 7);
+	_printf("Hi my name is %o\n", 457);
+	printf("Hi my name is %o\n", 457);
+
+
+    
 
 	return (0);
 }

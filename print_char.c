@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_char - to print one charactar
- * @arg: taking v_list
- * Return: A total count of the characters printed.
+ *print_char - to print one charactar
+ *@arg: taking v_list
+ *Return: A total count of the characters printed.
  */
 
 int print_char(va_list arg)
@@ -13,33 +13,36 @@ int print_char(va_list arg)
 }
 
 /**
- * print_str - to print string charactar
- * @arg: taking v_list
- * Return: A total count of the characters printed.
+ *print_str - to print string charactar
+ *@arg: taking v_list
+ *Return: A total count of the characters printed.
  */
 
 int print_str(va_list arg)
 {
-	int num;
-	char *str = va_arg(arg, char *);
+	char *str;
+	int i = 0, length;
 
+	str = va_arg(s, char *);
 	if (str == NULL)
-		str = "(null)";
-
-	num = 0;
-	while (str[num] != '\0')
 	{
-		_putchar(str[num]);
-		num++;
+		str = "(null)";
 	}
 
-	return (num);
+	length = _strlen(str);
+	while (i < length)
+	{
+		_putchar(str[i]);
+		i++;
+	}
+
+	return (length);
 }
 
 /**
- * print_per - to print % charactar
- * @arg: taking v_list
- * Return: A total count of the characters printed.
+ *print_per - to print % charactar
+ *@arg: taking v_list
+ *Return: A total count of the characters printed.
  */
 
 int print_per(__attribute__((unused)) va_list arg)
@@ -51,10 +54,10 @@ int print_per(__attribute__((unused)) va_list arg)
 }
 
 /**
- * get_size - get size of numbers' digits
- * @n: number
- * @b: base
- * Return: size
+ *get_size - get size of numbers' digits
+ *@n: number
+ *@b: base
+ *Return: size
  */
 int get_size(unsigned int n, int b)
 {

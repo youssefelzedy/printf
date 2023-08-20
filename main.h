@@ -18,6 +18,7 @@ int print_int(va_list arg);
 int print_binary(va_list arg);
 int print_unsigned_integer(va_list arg);
 int get_size(unsigned int n, int b);
+int print_octal(va_list arg);
 
 
 
