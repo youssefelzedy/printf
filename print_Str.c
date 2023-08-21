@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  *print_str_cap - to print string charactar
  *@arg: taking v_list
