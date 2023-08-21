@@ -1,39 +1,41 @@
 #include "main.h"
 
 /**
- *print_rot13 -  prints the rot13'ed string.
- *@arg: arguments.
- *Return: Counter.
+ *print_rot13 - prints the rot13'ed string.
+ *@arg: rguments.
+ *Return: Counter
  */
-
 int print_rot13(va_list arg)
 {
 	int i, j;
-
-	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char beta[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	
+	int counter = 0;
+	int k = 0;
 	char *str = va_arg(arg, char *);
-	if (str == NULL)
-		return (-1);
+	char s[] = { "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" };
 
-	for (i = 0; str[i] != '\0'; i++)
+	char u[] = { "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM" };
+
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j <= 52; j++)
+		k = 0;
+		for (j = 0; alpha[j] && !k; j++)
 		{
-			if (str[i] == alpha[j])
+			if (str[i] == s[j])
 			{
-				_putchar(beta[j]);
-				break;
+				_putchar(u[j]);
+				counter++;
+				k = 1;
 			}
 		}
 
-		if (x == 53)
+		if (!k)
 		{
 			_putchar(str[i]);
+			counter++;
 		}
 	}
 
-	return (i);
-
+	return (counter);
 }
