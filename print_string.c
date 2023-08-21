@@ -28,12 +28,12 @@ int print_str(va_list arg)
 }
 
 /**
- *print_STR - to print string charactar
+ *print_str_cap - to print string charactar
  *@arg: taking v_list
  *Return: A total count of the characters printed.
  */
 
-int print_STR(va_list arg)
+int print_str_cap(va_list arg)
 {
 	char *str;
 	int i = 0, length, nm;
@@ -60,7 +60,7 @@ int print_STR(va_list arg)
 			}
 
 			tmp = str[i];
-			_putchar(print_HEX_unsigned(tmp));
+			_putchar(print_hex_unsigned(tmp));
 			i++;
 			nm += 2;
 		}
