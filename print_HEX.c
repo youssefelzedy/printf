@@ -14,8 +14,16 @@ int print_HEX(va_list arg)
 	unsigned long int num = va_arg(arg, unsigned long int);
 	unsigned long int temp = num;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	cntr = get_size(num, 16);
 	HEX = malloc(cntr * sizeof(long int));
+	if (HEX == NULL)
+		return (-1);
 	if (HEX)
 	{
 		for (i = 0; i < cntr; i++)

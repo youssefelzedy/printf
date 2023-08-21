@@ -14,8 +14,15 @@ int print_octal(va_list arg)
 	unsigned int num = va_arg(arg, unsigned int);
 	unsigned int tmp = num;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	cntr = get_size(num, 8);
 	oct = malloc(cntr * sizeof(int));
+	if (oct == NULL)
+		return (-1);
 	if (oct)
 	{
 		for (i = 0; i < cntr; i++)
