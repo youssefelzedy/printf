@@ -25,6 +25,7 @@ int print_hex_to_pointer(unsigned long int num);
 int print_hex_unsigned(unsigned int num);
 int print_octal(va_list arg);
 int print_rev(va_list arg);
+int print_rot13(va_list arg);
 int get_size(unsigned int n, int b);
 int _strlen(char *s);
 int p_unknown(char ch);

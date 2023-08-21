@@ -35,6 +35,8 @@ int check(char ch, va_list arg)
 		num = print_pointer(arg);
 	else if (ch == 'r')
 		num = print_rev(arg);
+	else if (ch == 'R')
+		num = print_rot13(arg);
 	else
 		num = p_unknown(ch);
 
