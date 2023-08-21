@@ -3,6 +3,7 @@
 /**
  *print_hex - prints an hexgecimal number.
  *@arg: the argument of the print_hex function.
+ *@flag: flag.
  *Return: counter.
  */
 
