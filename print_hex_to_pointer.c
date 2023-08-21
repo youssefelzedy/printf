@@ -5,6 +5,7 @@
  *@num: the argument of the print_hex function.
  *Return: counter.
  */
+
 int print_hex_to_pointer(unsigned long int num)
 {
 	long int i;
@@ -20,20 +21,24 @@ int print_hex_to_pointer(unsigned long int num)
 
 	cntr++;
 	arr = malloc(cntr * sizeof(long int));
-
-	for (i = 0; i < cntr; i++)
+	if (arr)
 	{
-		arr[i] = temp % 16;
-		temp /= 16;
+		for (i = 0; i < cntr; i++)
+		{
+			arr[i] = temp % 16;
+			temp /= 16;
+		}
+
+		for (i = cntr - 1; i >= 0; i--)
+		{
+			if (arr[i] > 9)
+				arr[i] = arr[i] + 39;
+			_putchar(arr[i] + '0');
+		}
+
+		free(arr);
+		return (cntr);
 	}
 
-	for (i = cntr - 1; i >= 0; i--)
-	{
-		if (arr[i] > 9)
-			arr[i] = arr[i] + 39;
-		_putchar(arr[i] + '0');
-	}
-
-	free(arr);
-	return (cntr);
+	return (0);
 }

@@ -20,7 +20,6 @@ int print_pointer(va_list arg)
 		{
 			_putchar(s[i]);
 		}
-
 		return (i);
 	}
 
