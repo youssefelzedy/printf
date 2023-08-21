@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_HEX - prints an hexgecimal number.
- * @arg: the argument of the print_hex function.
- * Return: counter.
+ *print_HEX - prints an hexgecimal number.
+ *@arg: the argument of the print_hex function.
+ *Return: counter.
  */
 
 int print_HEX(va_list arg)
@@ -16,27 +16,33 @@ int print_HEX(va_list arg)
 
 	cntr = get_size(num, 16);
 	HEX = malloc(cntr * sizeof(long int));
-
-	for (i = 0; i < cntr; i++)
+	if (HEX)
 	{
-		HEX[i] = temp % 16;
-		temp /= 16;
-	}
-	for (i = cntr - 1; i >= 0; i--)
-	{
-		if (HEX[i] > 9)
-			HEX[i] = HEX[i] + 7;
-		_putchar(HEX[i] + '0');
+		for (i = 0; i < cntr; i++)
+		{
+			HEX[i] = temp % 16;
+			temp /= 16;
+		}
+
+		for (i = cntr - 1; i >= 0; i--)
+		{
+			if (HEX[i] > 9)
+				HEX[i] = HEX[i] + 7;
+			_putchar(HEX[i] + '0');
+		}
+
+		free(HEX);
+		return (cntr);
 	}
 
-	free(HEX);
-	return (cntr);
+	return (0);
+
 }
 
 /**
- * print_hex_unsigned - prints an hexgecimal number.
- * @num: the argument of the print_hex function.
- * Return: counter.
+ *print_hex_unsigned - prints an hexgecimal number.
+ *@num: the argument of the print_hex function.
+ *Return: counter.
  */
 
 int print_hex_unsigned(unsigned int num)
@@ -48,19 +54,24 @@ int print_hex_unsigned(unsigned int num)
 
 	cntr = get_size(num, 16);
 	HEX = malloc(cntr * sizeof(long int));
-
-	for (i = 0; i < cntr; i++)
+	if (HEX)
 	{
-		HEX[i] = temp % 16;
-		temp /= 16;
-	}
-	for (i = cntr - 1; i >= 0; i--)
-	{
-		if (HEX[i] > 9)
-			HEX[i] = HEX[i] + 7;
-		_putchar(HEX[i] + '0');
+		for (i = 0; i < cntr; i++)
+		{
+			HEX[i] = temp % 16;
+			temp /= 16;
+		}
+
+		for (i = cntr - 1; i >= 0; i--)
+		{
+			if (HEX[i] > 9)
+				HEX[i] = HEX[i] + 7;
+			_putchar(HEX[i] + '0');
+		}
+
+		free(HEX);
+		return (cntr);
 	}
 
-	free(HEX);
-	return (cntr);
+	return (0);
 }
