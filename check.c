@@ -4,6 +4,7 @@
  * check - Check if the type of the character
  * @ch: character
  * @arg: variadic function
+ * @flag: flag.
  * Return: A total count of the characters printed
  */
 
