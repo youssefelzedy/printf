@@ -52,12 +52,12 @@ int print_HEX(va_list arg, int flag)
 }
 
 /**
- *print_hex_unsigned - prints an hexgecimal number.
+ *print_HEX2 - prints an hexgecimal number.
  *@num: the argument of the print_hex function.
  *Return: counter.
  */
 
-int print_hex_unsigned(unsigned int num)
+int print_HEX2(unsigned int num)
 {
 	int i;
 	int *HEX;

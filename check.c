@@ -16,6 +16,8 @@ int check(char ch, va_list arg, int flag)
 		num = print_int(arg, flag);
 	else if (ch == 's')
 		num = print_str(arg);
+	else if (ch == 'S')
+		num = _print_str_cap(arg);
 	else if (ch == 'c')
 		num = print_char(arg);
 	else if (ch == '%')
