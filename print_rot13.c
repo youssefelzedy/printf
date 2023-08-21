@@ -19,11 +19,11 @@ int print_rot13(va_list arg)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; j < 53; j++)
+		for (j = 0; j <= 52; j++)
 		{
 			if (str[i] == alpha[j])
 			{
-				_putchar(u[j]);
+				_putchar(beta[j]);
 				break;
 			}
 		}
