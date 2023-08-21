@@ -8,7 +8,7 @@
 
 int print_rot13(va_list arg)
 {
-	int i, j
+	int i, j;
 
 	char *str = va_arg(arg, char *);
 	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
