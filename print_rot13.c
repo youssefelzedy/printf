@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * print_rot13 -  prints the rot13'ed string.
- * @arg: arguments.
- * Return: Counter.
+ *print_rot13 -  prints the rot13'ed string.
+ *@arg: arguments.
+ *Return: Counter.
  */
 
 int print_rot13(va_list arg)
 {
 	int i, j;
 
-	char *str = va_arg(arg, char *);
 	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char beta[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
+	
+	char *str = va_arg(arg, char *);
 	if (str == NULL)
 		return (-1);
 
@@ -35,4 +35,5 @@ int print_rot13(va_list arg)
 	}
 
 	return (i);
+
 }
