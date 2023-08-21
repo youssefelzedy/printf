@@ -8,30 +8,30 @@
 
 int print_rot13(va_list arg)
 {
-	int i;
+	int i, j
+
 	char *str = va_arg(arg, char *);
+	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char beta[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	if (str == NULL)
-		str = "(null)";
-	i = 0;
-	while (str[i] != '\0')
+		return (-1);
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((str[i] >= 97 && str[i] <= 122) || (str[i] >= 65 && str[i] <= 90))
+		for (j = 0; j < 53; j++)
 		{
-			if (str[i] > 109 || (str[i] > 77 && str[i] < 91))
+			if (str[i] == alpha[j])
 			{
-				str[i] -= 13;
-				_putchar(str[i]);
-			}
-			else
-			{
-				str[i] += 13;
-				_putchar(str[i]);
+				_putchar(u[j]);
+				break;
 			}
 		}
-		else
+
+		if (x == 53)
+		{
 			_putchar(str[i]);
-		i++;
+		}
 	}
 
 	return (i);
