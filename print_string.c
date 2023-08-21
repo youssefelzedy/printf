@@ -49,7 +49,7 @@ int print_str_cap(va_list arg)
 	nm = length;
 	while (i < length)
 	{
-		if ((str[i] >= 0 && str[i] <= 32) || (str[i] >= 127))
+		if ((str[i] > 0 && str[i] < 32) || (str[i] >= 127))
 		{
 			_putchar('\\');
 			_putchar('x');
@@ -62,7 +62,7 @@ int print_str_cap(va_list arg)
 			tmp = str[i];
 			_putchar(print_hex_unsigned(tmp));
 			i++;
-			nm += 2;
+			nm += 1;
 		}
 		else
 		{
