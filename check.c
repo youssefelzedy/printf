@@ -34,7 +34,7 @@ int check(char ch, va_list arg)
 	else if (ch == 'p')
 		num = print_pointer(arg);
 	else if (ch == 'r')
-		num = print_rev(num);
+		num = print_rev(arg);
 	else
 		num = p_unknown(ch);
 
