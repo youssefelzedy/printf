@@ -15,6 +15,8 @@ int check(char ch, va_list arg)
 		num = print_int(arg);
 	else if (ch == 's')
 		num = print_str(arg);
+	else if (ch == 'S')
+		num = print_STR(arg);
 	else if (ch == 'c')
 		num = print_char(arg);
 	else if (ch == '%')
@@ -27,6 +29,8 @@ int check(char ch, va_list arg)
 		num = print_octal(arg);
 	else if (ch == 'x')
 		num = print_hex(arg);
+	else if (ch == 'X')
+		num = print_HEX(arg);
 	else if (ch == 'p')
 		num = print_pointer(arg);
 	else
