@@ -1,12 +1,9 @@
 #include "main.h"
 
 /**
- *_print_str_cap - print exclusuives string.
- *Non printable characters (0 < ASCII value < 32 or >= 127)
- *are printed this way:\x followed by the ASCII code value
- *in hexadecimal (upper case - always 2 characters)
- *@arg: argumen t.
- *Return: the length of the string.
+ * _print_str_cap - print exclusuives string.
+ * @arg: the argument of the integer function.
+ * Return: A total count of the characters printed.
  */
 
 int _print_str_cap(va_list arg)

@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- *main - The main function
- *Return: Always Return 0
+ * main - The main function.
+ * Return: Always Return 0.
  */
 
 int main(void)

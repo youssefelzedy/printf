@@ -2,7 +2,7 @@
 
 /**
  * print_int - to print print unsigned integer
- * @arg: num should be print
+ * @arg: the argument of the integer function.
  * @flag: flag 1 or 2 or 3 or 4.
  * Return: A total count of the characters printed.
  */
@@ -46,7 +46,7 @@ int print_int(va_list arg, int flag)
 
 /**
  * print_unsigned_integer - to print print unsigned integer
- * @arg: num should be print
+ * @arg: the argument of the unsigned integer function.
  * Return: A total count of the characters printed.
  */
 

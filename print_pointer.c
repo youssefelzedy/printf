@@ -2,9 +2,10 @@
 
 /**
  * print_pointer - prints an hexgecimal number.
- * @arg: arguments.
- * Return: counter.
+ * @arg: the argument of the integer function..
+ * Return: A total count of the characters printed.
  */
+
 int print_pointer(va_list arg)
 {
 	void *p;

@@ -5,7 +5,7 @@
  *@f: flag
  *@f2: format
  *
- *Return: void
+ *Return: Return 0, 1, 2, 3 or 4.
  */
 
 int check_flags(char f, char f2)

@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- *print_octal - prints octal numbers
- *@arg: argument list
- *
- *Return: number of printed charactes
+ * print_octal - prints octal numbers
+ * @arg: the argument of the integer function.
+ * Return: A total count of the characters printed.
  */
 
 int print_octal(va_list arg)
