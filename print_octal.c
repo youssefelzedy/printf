@@ -16,15 +16,22 @@ int print_octal(va_list arg)
 
 	cntr = get_size(num, 8);
 	oct = malloc(cntr * sizeof(int));
-	for (i = 0; i < cntr; i++)
+	if (oct)
 	{
-		oct[i] = tmp % 8;
-		tmp /= 8;
+		for (i = 0; i < cntr; i++)
+		{
+			oct[i] = tmp % 8;
+			tmp /= 8;
+		}
+
+		for (i = cntr - 1; i >= 0; i--)
+		{
+			_putchar(oct[i] + '0');
+		}
+
+		free(oct);
+		return (cntr);
 	}
-	for (i = cntr - 1; i >= 0; i--)
-	{
-		_putchar(oct[i] + '0');
-	}
-	free(oct);
-	return (cntr);
+
+	return (0);
 }
