@@ -41,18 +41,18 @@ int print_str_cap(va_list arg)
 
 	str = va_arg(arg, char *);
 	if (str == NULL)
-	{
-		str = "(null)";
-	}
+		return (0);
 
 	length = _strlen(str);
-	nm = length;
+	nm = 0;
 	while (i < length)
 	{
 		if ((str[i] > 0 && str[i] < 32) || (str[i] >= 127))
 		{
 			_putchar('\\');
 			_putchar('x');
+			nm += 2;
+
 			if (str[i] < 16)
 			{
 				_putchar('0');
@@ -60,15 +60,15 @@ int print_str_cap(va_list arg)
 			}
 
 			tmp = str[i];
-			_putchar(print_hex_unsigned(tmp));
-			i++;
-			nm += 1;
+			nm += _putchar(print_hex_unsigned(tmp));
 		}
 		else
 		{
 			_putchar(str[i]);
-			i++;
+			nm++;
 		}
+
+		i++;
 	}
 
 	return (nm);
