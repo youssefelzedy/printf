@@ -6,7 +6,7 @@
  * Return: A total count of the characters printed.
  */
 
-int print_int(va_list arg)
+int print_int(va_list arg, int flag)
 {
 	int number = va_arg(arg, int), div, len;
 	unsigned int num;
@@ -14,6 +14,14 @@ int print_int(va_list arg)
 	div = 1;
 	len = 0;
 
+	if (flag == 1 && number >= 0)
+	{
+		len += _putchar('+');
+	}
+	if (flag == 2 && number >= 0)
+	{
+		len += _putchar(' ');
+	}
 	if (number < 0)
 	{
 		len += _putchar('-');

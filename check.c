@@ -7,12 +7,12 @@
  * Return: A total count of the characters printed
  */
 
-int check(char ch, va_list arg)
+int check(char ch, va_list arg, int flag)
 {
 	int num = 0;
 
-	if (ch == 'i' || ch == 'd')
-		num = print_int(arg);
+	if ((ch == 'i' || ch == 'd') && (flag != 3 && flag != 4))
+		num = print_int(arg, flag);
 	else if (ch == 's')
 		num = print_str(arg);
 	else if (ch == 'S')
@@ -27,9 +27,9 @@ int check(char ch, va_list arg)
 		num = print_binary(arg);
 	else if (ch == 'o')
 		num = print_octal(arg);
-	else if (ch == 'x')
-		num = print_hex(arg);
-	else if (ch == 'X')
+	else if (ch == 'x' || flag == 3)
+		num = print_hex(arg, flag);
+	else if (ch == 'X' || flag == 4)
 		num = print_HEX(arg);
 	else if (ch == 'p')
 		num = print_pointer(arg);

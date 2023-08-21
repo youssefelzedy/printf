@@ -6,14 +6,20 @@
  *Return: counter.
  */
 
-int print_hex(va_list arg)
+int print_hex(va_list arg, int flag)
 {
-	long int i;
-	long int *hex;
-	long int cntr = 0;
-	unsigned long int num = va_arg(arg, unsigned long int);
-	unsigned long int temp = num;
+	long int i, *hex, cntr = 0, t = 0;
+	unsigned long int num = va_arg(arg, unsigned long int), temp = num;
 
+	if (flag == 3)
+	{
+		if (num != 0)
+		{
+			_putchar('0');
+			_putchar('x');
+			t = 2;
+		}
+	}
 	if (num == 0)
 	{
 		_putchar('0');
@@ -30,18 +36,16 @@ int print_hex(va_list arg)
 			hex[i] = temp % 16;
 			temp /= 16;
 		}
-
 		for (i = cntr - 1; i >= 0; i--)
 		{
 			if (hex[i] > 9)
 				hex[i] = hex[i] + 39;
 			_putchar(hex[i] + '0');
 		}
-
 		free(hex);
+		cntr += t;
 		return (cntr);
 	}
-
 	return (0);
 
 }
