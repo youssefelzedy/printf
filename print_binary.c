@@ -96,11 +96,11 @@ int print_hex(va_list arg, int flag)
  * Return: A total count of the characters printed.
  */
 
-int print_hex_to_pointer(unsigned int num)
+int print_hex_to_pointer(unsigned long int num)
 {
-	unsigned int *arr;
-	int cntr = 0, i;
-	unsigned int temp = num;
+	long int *arr;
+	long cntr = 0, i;
+	unsigned long int temp = num;
 
 	while (num / 16 != 0)
 	{
