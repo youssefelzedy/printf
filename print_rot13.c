@@ -11,20 +11,20 @@ int print_rot13(va_list arg)
 	int counter = 0;
 	int k = 0;
 	char *str = va_arg(arg, char *);
-	char s[] = { "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" };
+	char alpha[] = { "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" };
 
-	char u[] = { "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM" };
+	char beta[] = { "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM" };
 
 	if (str == NULL)
 		str = "(null)";
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		k = 0;
 		for (j = 0; alpha[j] && !k; j++)
 		{
-			if (str[i] == s[j])
+			if (str[i] == alpha[j])
 			{
-				_putchar(u[j]);
+				_putchar(beta[j]);
 				counter++;
 				k = 1;
 			}
