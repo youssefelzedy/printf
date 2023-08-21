@@ -3,7 +3,7 @@
 /**
  * print_int - to print print unsigned integer
  * @arg: num should be print
- * @flag: flag.
+ * @flag: flag 1 or 2 or 3 or 4.
  * Return: A total count of the characters printed.
  */
 

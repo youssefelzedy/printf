@@ -3,7 +3,7 @@
 /**
  *print_hex - prints an hexgecimal number.
  *@arg: the argument of the print_hex function.
- *@flag: flag.
+ *@flag: flag 1 or 2 or 3 or 4.
  *Return: counter.
  */
 
@@ -57,12 +57,11 @@ int print_hex(va_list arg, int flag)
  *Return: counter.
  */
 
-int print_hex_to_pointer(unsigned long int num)
+int print_hex_to_pointer(unsigned int num)
 {
-	long int i;
-	long int *arr;
-	long int cntr = 0;
-	unsigned long int temp = num;
+	unsigned int *arr;
+	int cntr = 0, i;
+	unsigned int temp = num;
 
 	while (num / 16 != 0)
 	{
@@ -71,7 +70,7 @@ int print_hex_to_pointer(unsigned long int num)
 	}
 
 	cntr++;
-	arr = malloc(cntr * sizeof(long int));
+	arr = malloc(cntr * sizeof(unsigned int));
 	if (arr)
 	{
 		for (i = 0; i < cntr; i++)

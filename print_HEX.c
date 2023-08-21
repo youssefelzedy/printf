@@ -3,23 +3,29 @@
 /**
  *print_HEX - prints an hexgecimal number.
  *@arg: the argument of the print_hex function.
+ *@flag: flag 1 or 2 or 3 or 4.
  *Return: counter.
  */
 
-int print_HEX(va_list arg)
+int print_HEX(va_list arg, int flag)
 {
-	long int i;
-	long int *HEX;
-	long int cntr = 0;
-	unsigned long int num = va_arg(arg, unsigned long int);
-	unsigned long int temp = num;
+	long int i, t = 0, *HEX, cntr = 0;
+	unsigned long int num = va_arg(arg, unsigned long int), temp = num;
 
+	if (flag == 4)
+	{
+		if (num != 0)
+		{
+			_putchar('0');
+			_putchar('x');
+			t = 2;
+		}
+	}
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-
 	cntr = get_size(num, 16);
 	HEX = malloc(cntr * sizeof(long int));
 	if (HEX == NULL)
@@ -31,18 +37,16 @@ int print_HEX(va_list arg)
 			HEX[i] = temp % 16;
 			temp /= 16;
 		}
-
 		for (i = cntr - 1; i >= 0; i--)
 		{
 			if (HEX[i] > 9)
 				HEX[i] = HEX[i] + 7;
 			_putchar(HEX[i] + '0');
 		}
-
 		free(HEX);
+		cntr += t;
 		return (cntr);
 	}
-
 	return (0);
 
 }
@@ -55,10 +59,10 @@ int print_HEX(va_list arg)
 
 int print_hex_unsigned(unsigned int num)
 {
-	long int i;
-	long int *HEX;
-	long int cntr = 0;
-	unsigned long int temp = num;
+	int i;
+	int *HEX;
+	int cntr = 0;
+	unsigned int temp = num;
 
 	if (num == 0)
 	{
@@ -66,7 +70,7 @@ int print_hex_unsigned(unsigned int num)
 		return (1);
 	}
 	cntr = get_size(num, 16);
-	HEX = malloc(cntr * sizeof(long int));
+	HEX = malloc(cntr * sizeof(int));
 	if (HEX == NULL)
 		return (-1);
 	if (HEX)

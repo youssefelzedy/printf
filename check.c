@@ -31,7 +31,7 @@ int check(char ch, va_list arg, int flag)
 	else if (ch == 'x' || flag == 3)
 		num = print_hex(arg, flag);
 	else if (ch == 'X' || flag == 4)
-		num = print_HEX(arg);
+		num = print_HEX(arg, flag);
 	else if (ch == 'p')
 		num = print_pointer(arg);
 	else if (ch == 'r')
