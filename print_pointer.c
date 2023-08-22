@@ -78,5 +78,5 @@ int print_pointer(va_list arg)
 	_putchar('0');
 	_putchar('x');
 	print_hex = print_hex_to_pointer(val);
-	return (val + 2);
+	return (print_hex + 2);
 }
