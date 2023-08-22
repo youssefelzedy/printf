@@ -12,7 +12,7 @@ int check(char ch, va_list arg, int flag)
 {
 	int num = 0;
 
-	if ((ch == 'i' || ch == 'd') && (flag != 3 && flag != 4))
+	if ((ch == 'i' || ch == 'd') && (flag != 3 && flag != 4 && flag != 5))
 		num = print_int(arg, flag);
 	else if (ch == 's')
 		num = print_str(arg);

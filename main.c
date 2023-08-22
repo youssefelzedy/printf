@@ -35,14 +35,11 @@ int main(void)
 	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	_printf("bin:[%b]\n", 7);
-	printf("bin:[%b]\n", 7);
 	_printf("Address:[%p]\n", addr);
 	printf("Address:[%p]\n", addr);
 	len = _printf("%S\n", "Best\n\tSchool");
 	_printf("%d the length", len);
 	len = _printf("%S\n", "Best\n\tSchool");
-	len = _printf("%#od the length\n", 14523);
-	len2 = printf("%#od the length\n", 14523);
 	printf("%d\n", len);
 	printf("%d\n", len2);
 	return (0);

@@ -62,7 +62,11 @@ int _printf(const char *format, ...)
 			if (check_flags(format[i], format[i + 1]))
 			{
 				flag = check_flags(format[i], format[i + 1]);
-				i++;
+				if (flag == 2)
+					while (format[i] == ' ')
+						i++;
+				else
+					i++;
 			}
 
 			value = check(format[i], arg, flag);

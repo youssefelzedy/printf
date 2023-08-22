@@ -24,7 +24,7 @@ int _strlen(char *s)
  * get_size - get size of numbers' digits
  * @n: number.
  * @b: base.
- *Return: size of number.
+ * Return: size of number.
  */
 
 int get_size(unsigned int n, int b)
