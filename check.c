@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * check - Check if the type of the character
- * @ch: character
- * @arg: variadic function
+ * check - Check if the type of the character.
+ * @ch: character.
+ * @arg: variadic function.
  * @flag: flag.
- * Return: A total count of the characters printed
+ * Return: A total count of the characters printed.
  */
 
 int check(char ch, va_list arg, int flag)
@@ -26,8 +26,8 @@ int check(char ch, va_list arg, int flag)
 		num = print_unsigned_integer(arg);
 	else if (ch == 'b')
 		num = print_binary(arg);
-	else if (ch == 'o')
-		num = print_octal(arg);
+	else if (ch == 'o' || flag == 5)
+		num = print_octal(arg, flag);
 	else if (ch == 'x' || flag == 3)
 		num = print_hex(arg, flag);
 	else if (ch == 'X' || flag == 4)

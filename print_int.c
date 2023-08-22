@@ -3,7 +3,7 @@
 /**
  * print_int - to print print unsigned integer
  * @arg: the argument of the integer function.
- * @flag: flag 1 or 2 or 3 or 4.
+ * @flag: flag 1 or 2 or 3 or 4 or 5.
  * Return: A total count of the characters printed.
  */
 

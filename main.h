@@ -23,7 +23,7 @@ int print_hex(va_list arg, int flag);
 int print_HEX(va_list arg, int flag);
 int print_HEX2(unsigned int num);
 int print_hex_to_pointer(unsigned long int num);
-int print_octal(va_list arg);
+int print_octal(va_list arg, int flag);
 
 /*Helper Fnction*/
 int _strlen(char *s);

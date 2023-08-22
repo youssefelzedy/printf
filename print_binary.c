@@ -42,7 +42,7 @@ int print_binary(va_list arg)
 /**
  * print_hex - prints an hexgecimal number.
  * @arg: the argument of the print_hex function.
- * @flag: flag 1 or 2 or 3 or 4.
+ * @flag: flag 1 or 2 or 3 or 4 or 5.
  * Return: A total count of the characters printed.
  */
 
@@ -93,7 +93,7 @@ int print_hex(va_list arg, int flag)
 /**
  * print_HEX - prints an hexgecimal number.
  * @arg: the argument of the print_HEX function.
- * @flag: flag 1 or 2 or 3 or 4.
+ * @flag: flag 1 or 2 or 3 or 4 or 5.
  * Return: A total count of the characters printed.
  */
 

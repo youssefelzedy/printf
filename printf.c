@@ -22,6 +22,9 @@ int check_flags(char f, char f2)
 
 		if (f2 == 'X')
 			return (4);
+
+		if (f2 == 'o')
+			return (5);
 	}
 
 	return (0);
