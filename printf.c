@@ -1,46 +1,37 @@
 #include "main.h"
 
 /**
- *check_flags - checks flags
- *@f: flag
- *@f2: format
- *
- *Return: Return 0, 1, 2, 3 or 4.
+ * check_flags - checks flags
+ * @f: flag
+ * @f2: formats
+ * Return: Return 0, 1, 2, 3 or 4.
  */
 
 int check_flags(char f, char f2)
 {
 	if (f == '+')
-	{
 		return (1);
-	}
 
 	if (f == ' ')
-	{
 		return (2);
-	}
 
 	if (f == '#')
 	{
 		if (f2 == 'x')
-		{
 			return (3);
-		}
 
 		if (f2 == 'X')
-		{
 			return (4);
-		}
 	}
 
 	return (0);
 }
 
 /**
- *_printf - Receives the main string and all the necessary parameters to
- *print a formated string
- *@format: A string containing all the desired characters
- *Return: A total count of the characters printed
+ * _printf - Receives the main string and all the necessary parameters to
+ * print a formated string
+ * @format: A string containing all the desired characters
+ * Return: A total count of the characters printed
  */
 
 int _printf(const char *format, ...)
@@ -68,8 +59,6 @@ int _printf(const char *format, ...)
 			if (check_flags(format[i], format[i + 1]))
 			{
 				flag = check_flags(format[i], format[i + 1]);
-				if (flag == 4 || flag == 3)
-					i++;
 				i++;
 			}
 

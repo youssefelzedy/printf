@@ -42,9 +42,9 @@ int main(void)
 	_printf("%d the length", len);
 	len = _printf("%S\n", "Best\n\tSchool");
 	_printf("%x the length\n", 1234);
-	printf("%x the length\n", 1234);
 	_printf("%#xd the length\n", 1234);
-	printf("%#xd the length\n", 1234);
-
+	_printf("%#Xd the length\n", 1234);
+	_printf("% d the length\n", 1234);
+	_printf("%+d the length\n", 1234);
 	return (0);
 }
