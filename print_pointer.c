@@ -10,7 +10,7 @@
 int print_hex_to_pointer(unsigned long int num)
 {
 	long int *hex;
-	long cntr = 0, i;
+	long int cntr = 0, i;
 	unsigned long int temp = num;
 
 	if (num == 0)
@@ -18,8 +18,13 @@ int print_hex_to_pointer(unsigned long int num)
 		_putchar('0');
 		return (1);
 	}
-	cntr = get_size(num, 16);
-	hex = malloc((cntr + 1) * sizeof(unsigned long int));
+	while (num / 16 != 0)
+	{
+		num /= 16;
+		cntr++;
+	}
+	cntr++;
+	hex = malloc(sizeof(long int) * (cntr));
 	if (hex == NULL)
 		return (-1);
 
@@ -53,25 +58,25 @@ int print_hex_to_pointer(unsigned long int num)
 
 int print_pointer(va_list arg)
 {
-	void *p;
-	char *s = "(nil)";
-	long int a;
-	int b;
+	void *ptr;
+	char *str = "(nil)";
+	unsigned long int val;
+	int print_hex;
 	int i;
 
-	p = va_arg(arg, void *);
-	if (p == NULL)
+	ptr = va_arg(arg, void *);
+	if (ptr == NULL)
 	{
-		for (i = 0; s[i] != '\0'; i++)
+		for (i = 0; str[i] != '\0'; i++)
 		{
-			_putchar(s[i]);
+			_putchar(str[i]);
 		}
 		return (i);
 	}
 
-	a = (unsigned long int) p;
+	val = (unsigned long int)ptr;
 	_putchar('0');
 	_putchar('x');
-	b = print_hex_to_pointer(a);
-	return (b + 2);
+	print_hex = print_hex_to_pointer(val);
+	return (val + 2);
 }
