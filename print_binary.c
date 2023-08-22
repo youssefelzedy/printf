@@ -91,48 +91,6 @@ int print_hex(va_list arg, int flag)
 }
 
 /**
- * print_hex_to_pointer - prints an hexgecimal number.
- * @num: the argument of the print_hex_to_pointer function.
- * Return: A total count of the characters printed.
- */
-
-int print_hex_to_pointer(unsigned long int num)
-{
-	long int *hex;
-	long cntr = 0, i;
-	unsigned long int temp = num;
-
-	while (num / 16 != 0)
-	{
-		num /= 16;
-		cntr++;
-	}
-
-	cntr++;
-	hex = malloc(cntr * sizeof(unsigned int));
-	if (hex)
-	{
-		for (i = 0; i < cntr; i++)
-		{
-			hex[i] = temp % 16;
-			temp /= 16;
-		}
-
-		for (i = cntr - 1; i >= 0; i--)
-		{
-			if (hex[i] > 9)
-				hex[i] = hex[i] + 39;
-			_putchar(hex[i] + '0');
-		}
-
-		free(hex);
-		return (cntr);
-	}
-
-	return (0);
-}
-
-/**
  * print_HEX - prints an hexgecimal number.
  * @arg: the argument of the print_HEX function.
  * @flag: flag 1 or 2 or 3 or 4.
