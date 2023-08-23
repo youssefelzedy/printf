@@ -40,7 +40,8 @@ int main(void)
 	len = _printf("%S\n", "Best\n\tSchool");
 	_printf("%d the length", len);
 	len = _printf("%S\n", "Best\n\tSchool");
-	printf("%d\n", len);
-	printf("%d\n", len2);
+	len2 = _printf("%S\n", "Best\n\tSchool");
+	_printf("Len:[%#xd]\n", 0);
+	printf("Len:[%#xd]\n", 0);
 	return (0);
 }
