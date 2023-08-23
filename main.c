@@ -41,7 +41,7 @@ int main(void)
 	_printf("%d the length", len);
 	len = _printf("%S\n", "Best\n\tSchool");
 	len2 = _printf("%S\n", "Best\n\tSchool");
-	_printf("Len:[%#xd]\n", 0);
-	printf("Len:[%#xd]\n", 0);
+	_printf("% +d + %+ d = % +i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	_printf("% +i + %+ i = % +d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
 	return (0);
 }

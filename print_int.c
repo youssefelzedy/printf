@@ -15,7 +15,7 @@ int print_int(va_list arg, int flag)
 	div = 1;
 	len = 0;
 
-	if (flag == 1 && number >= 0)
+	if ((flag == 1 || flag == 6) && number >= 0)
 	{
 		len += _putchar('+');
 	}

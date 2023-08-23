@@ -10,10 +10,22 @@
 int check_flags(char f, char f2)
 {
 	if (f == '+')
-		return (1);
+	{
+		if (f2 == ' ')
+			return (6);
+		else
+			return (1);
+	}
+
 
 	if (f == ' ')
-		return (2);
+	{
+		if (f2 == '+')
+			return (6);
+		else
+			return (2);
+	}
+
 
 	if (f == '#')
 	{
@@ -31,8 +43,7 @@ int check_flags(char f, char f2)
 }
 
 /**
- * _printf - Receives the main string and all the necessary parameters to
- * print a formated string
+ * _printf - Receives the main string and all the necessary parameters to print a string
  * @format: A string containing all the desired characters
  * Return: A total count of the characters printed
  */
@@ -65,6 +76,8 @@ int _printf(const char *format, ...)
 				if (flag == 2)
 					while (format[i] == ' ')
 						i++;
+				else if (flag == 6)
+					i += 2;
 				else
 					i++;
 			}
